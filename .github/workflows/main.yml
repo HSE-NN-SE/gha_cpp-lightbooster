@@ -46,7 +46,7 @@ jobs:
         - uses: appleboy/telegram-action@master 
           with:
             name: vector_exe_artifact
-            path: vector.exe
+            path: vector_exe_artifact
             to: ${{ secrets.TELEGRAM_TO_DEBUG }} 
             token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }} 
             message: vector_message
