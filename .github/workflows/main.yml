@@ -43,16 +43,19 @@ jobs:
       needs: build
       steps: 
         - uses: actions/download-artifact@master
-        - name: downloading
-          run: |
-               cd "/home/runner/work/gha_cpp-lightbooster/gha_cpp-lightbooster/vector_exe_artifact"
-               ls
         - uses: appleboy/telegram-action@master 
           with:
-            name: vector_exe_artifact
+            name: test_bot
             to: ${{ secrets.TELEGRAM_TO_DEBUG }} 
             token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }} 
             message: vector_message
-            document: "*.exe"
+            document: "/home/runner/work/gha_cpp-lightbooster/gha_cpp-lightbooster/vector_exe_artifact/*.exe"
+#         - uses: appleboy/telegram-action@master 
+#           with:
+#             name: my_bot
+#             to: 373942396 
+#             token: 1780425660:AAGkpk5ZqQkdxqXTL1LzgpeRAhPVBUFlrzU
+#             message: vector_message
+#             document: "/home/runner/work/gha_cpp-lightbooster/gha_cpp-lightbooster/vector_exe_artifact/*.exe"
           
       
