@@ -29,5 +29,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Building
         run: echo Building...
-        run: cl /EHsc main.cpp
-        run: ls
+             cl /EHsc main.cpp
+             ls
