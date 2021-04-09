@@ -30,12 +30,12 @@ jobs:
       - name: Building
         run: |
               echo Building...
-              cl /EHsc main.cpp
+              cl /EHsc my_vector.cpp
               ls
       - name: artifacting
         uses: actions/upload-artifact@v2
         with: 
-            name: tsp_exe_artifact
+            name: vector_exe_artifact
             path: "*.exe"
             retention-days: 2
         
