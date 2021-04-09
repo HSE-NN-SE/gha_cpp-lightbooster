@@ -43,8 +43,8 @@ jobs:
       needs: build
       steps: 
         - name: ping
-          uses: appleboy/telegram-action@master 
-                actions/download-artifact@master
+        - uses: appleboy/telegram-action@master 
+        - uses: actions/download-artifact@master
           with:
             name: vector_exe_artifact
             path: vector.exe
