@@ -31,7 +31,6 @@ jobs:
         run: |
               echo Building...
               cl /EHsc main.cpp
-              pwd
               ls
       - name: artifacting
         uses: actions/upload-artifact@v2
