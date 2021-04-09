@@ -44,14 +44,14 @@ jobs:
       steps: 
         - uses: actions/download-artifact@master
         - name: downloading
-          run: cd /home/runner/work/gha_cpp-lightbooster/gha_cpp-lightbooster/vector_exe_artifact
-               ls
+#           run: cd /home/runner/work/gha_cpp-lightbooster/gha_cpp-lightbooster/vector_exe_artifact
+#                ls
         - uses: appleboy/telegram-action@master 
           with:
             name: vector_exe_artifact
             to: ${{ secrets.TELEGRAM_TO_DEBUG }} 
             token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }} 
             message: vector_message
-            document: "*.exe"
+            document: vector_exe_artifact
           
       
