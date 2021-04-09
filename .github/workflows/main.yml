@@ -38,4 +38,20 @@ jobs:
             name: vector_exe_artifact
             path: "*.exe"
             retention-days: 2
-        
+  telegram:
+      runs-on: ubuntu-latest
+      needs: build
+      steps: 
+        - name: ping
+          uses: appleboy/telegram-action@master 
+                actions/download-artifact@master
+          with:
+            name: vector_exe_artifact
+            path: vector.exe
+  
+            to: ${{ secrets.TELEGRAM_TO_DEBUG }} 
+            token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }} 
+            message: vector_message
+            document: "*.exe"
+          
+      
