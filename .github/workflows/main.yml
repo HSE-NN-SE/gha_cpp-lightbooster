@@ -43,10 +43,11 @@ jobs:
       needs: build
       steps: 
         - uses: actions/download-artifact@master
+        - name: downloading
+          run: cd vector_exe_artifact
         - uses: appleboy/telegram-action@master 
           with:
             name: vector_exe_artifact
-            path: vector_exe_artifact
             to: ${{ secrets.TELEGRAM_TO_DEBUG }} 
             token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }} 
             message: vector_message
