@@ -30,7 +30,7 @@ jobs:
       - name: Building
         run: |
               echo Building...
-              cl /EHsc main.cpp /out:tsp.exe
+              cl /EHsc main.cpp
               pwd
               ls
       - name: artifacting
