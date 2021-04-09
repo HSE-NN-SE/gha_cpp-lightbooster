@@ -28,6 +28,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Building
-        run: echo Building...
-             cl /EHsc main.cpp
-             ls
+        run: |
+              echo Building...
+              cl /EHsc main.cpp /out:tsp.exe
+              pwd
+              ls
+      - name: artifacting
+        uses: actions/upload-artifact@v2
+        with: 
+            name: tsp_exe_artifact
+            path: "*.exe"
+            retention-days: 2
+        
